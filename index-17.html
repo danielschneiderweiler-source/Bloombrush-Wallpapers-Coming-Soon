@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bloombrush Wallpapers</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F2EDE4;
+    --heading-color: #737270;
+    --subtext-color: #B3B3B3;
+
+    /* Adjust these to change size/spacing */
+    --title-width: 640px;
+    --title-to-emblem-space: 32px;
+    --emblem-width: 396px;
+    --emblem-to-heading-space: 96px;
+    --heading-size: 1.6rem;
+    --heading-letter-spacing: 0.18em;
+    --heading-to-subtext-space: 14px;
+    --subtext-size: 1rem;
+    --subtext-letter-spacing: 0.08em;
+    --leaf-width: 168px;
+    --leaf-to-text-space: 16px;
+    --corner-left-width: 285px;
+    --corner-right-width: 270px;
+  }
+
+  html, body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sorts Mill Goudy", serif;
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .corner-left,
+  .corner-right {
+    position: fixed;
+    top: 0;
+    width: calc((100vw - var(--title-width)) / 2);
+    opacity: 0.75;
+    pointer-events: none;
+  }
+
+  .corner-left {
+    left: 0;
+  }
+
+  .corner-right {
+    right: 0;
+  }
+
+  .corner-left img {
+    display: block;
+    width: var(--corner-left-width);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .corner-right img {
+    display: block;
+    margin-left: auto;
+    width: var(--corner-right-width);
+    max-width: 100%;
+    height: auto;
+  }
+
+  .title {
+    width: var(--title-width);
+    max-width: 100%;
+    height: auto;
+    margin-bottom: var(--title-to-emblem-space);
+  }
+
+  .emblem {
+    width: var(--emblem-width);
+    max-width: 100%;
+    height: auto;
+    margin-bottom: var(--emblem-to-heading-space);
+  }
+
+  .text-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .leaf-left {
+    position: absolute;
+    right: 100%;
+    margin-right: var(--leaf-to-text-space);
+    width: var(--leaf-width);
+    max-width: 30vw;
+    height: auto;
+  }
+
+  .leaf-right {
+    position: absolute;
+    left: 100%;
+    margin-left: var(--leaf-to-text-space);
+    width: var(--leaf-width);
+    max-width: 30vw;
+    height: auto;
+  }
+
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+    color: var(--heading-color);
+    opacity: 0.8;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    font-size: var(--heading-size);
+    letter-spacing: var(--heading-letter-spacing);
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: var(--heading-to-subtext-space) 0 0;
+    color: var(--subtext-color);
+    opacity: 0.915;
+    font-size: var(--subtext-size);
+    letter-spacing: var(--subtext-letter-spacing);
+  }
+
+  @media (max-width: 600px) {
+    :root {
+      --title-width: 360px;
+      --title-to-emblem-space: 18px;
+      --emblem-width: 220px;
+      --emblem-to-heading-space: 48px;
+      --heading-size: 1rem;
+      --heading-to-subtext-space: 10px;
+      --subtext-size: 0.7rem;
+      --leaf-width: 44px;
+      --leaf-to-text-space: 8px;
+    }
+    .corner-left,
+    .corner-right {
+      display: none;
+    }
+    .page {
+      padding: 1.25rem;
+    }
+    .text-row {
+      display: grid;
+      grid-template-columns: var(--leaf-width) 1fr var(--leaf-width);
+      align-items: center;
+      column-gap: var(--leaf-to-text-space);
+      width: 100%;
+    }
+    .leaf-left,
+    .leaf-right {
+      position: static;
+      margin: 0;
+      width: 100%;
+      max-width: none;
+    }
+    .text-block {
+      min-width: 0;
+    }
+    p {
+      max-width: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="corner-left"><img src="corner-left.png" alt=""></div>
+  <div class="corner-right"><img src="corner-right.png" alt=""></div>
+  <div class="page">
+    <img class="title" src="title.svg" alt="Bloombrush Wallpapers">
+    <img class="emblem" src="emblem.svg" alt="Bloombrush Wallpapers emblem">
+    <div class="text-row">
+      <img class="leaf-left" src="maple-leaf.png" alt="">
+      <div class="text-block">
+        <h1>Website Coming Soon</h1>
+        <p>Please direct enquiries to sales@bloombrushwallpapers.com</p>
+      </div>
+      <img class="leaf-right" src="maple-leaf-right.png" alt="">
+    </div>
+  </div>
+</body>
+</html>
